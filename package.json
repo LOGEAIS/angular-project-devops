@@ -6,7 +6,6 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "sonar": "sonar-scanner -Dsonar.projectKey=vn -Dsonar.sources=. -Dsonar.host.url=http://localhost:9000 -Dsonar.login=cac42af7cb5494b035f2b5e3e441cc7b516dbb70",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
@@ -22,7 +21,6 @@
     "@angular/router": "~9.1.9",
     "bootstrap": "^4.5.0",
     "rxjs": "~6.5.4",
-    "sonar-scanner": "^3.1.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
