@@ -9,7 +9,8 @@ import {UserProgression} from '../model/UserProgression';
 export class UserProgressionService {
 
   constructor(private http: HttpClient) {
-    this.url = 'http://localhost:8080';
+    var baseURL = window.location.href.replace("http://", "").split(":")[0];
+    this.url = 'http://' + baseURL + ':8080';
   }
 
   private readonly url: string;

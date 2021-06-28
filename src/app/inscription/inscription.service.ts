@@ -8,7 +8,8 @@ import {UserProfile} from '../model/UserProfile';
 export class InscriptionService {
 
   constructor(private http: HttpClient) {
-    this.url = 'http://localhost:8080/register';
+    var baseURL = window.location.href.replace("http://", "").split(":")[0];
+    this.url = 'http://' + baseURL + ':8080/register';
   }
 
   private readonly url: string;

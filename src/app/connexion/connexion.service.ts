@@ -9,7 +9,8 @@ import {Observable} from 'rxjs';
 export class ConnexionService {
 
   constructor(private http: HttpClient) {
-    this.url = 'http://localhost:8080/authenticate';
+    var baseURL = window.location.href.replace("http://", "").split(":")[0];
+    this.url = 'http://' + baseURL + ':8080/authenticate';
   }
 
   private readonly url: string;
