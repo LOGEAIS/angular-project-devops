@@ -1,0 +1,25 @@
+<div class="overlay-image">
+  <div class="image">
+    <a class="img-font-index">
+      <img class="img-font" src="/assets/img-font-accueil/font-menu2.gif">
+    </a>
+  </div>
+  <div class="text">
+    <div class="card" id="list-menu">
+      <div class="card-header">
+        EFREI STORY
+      </div>
+      <ul class="list-group list-group-flush">
+        <a *ngIf="!userIsConnected" [routerLink]="['/authentification']">
+          <li class="list-group-item" id="element-menu">CONNEXION</li>
+        </a>
+        <a *ngIf="!userIsConnected" [routerLink]="['/register']">
+          <li class="list-group-item" id="element-menu">INSCRIPTION</li>
+        </a>
+        <a *ngIf="userIsConnected" (click)="disconnect()">
+          <li class="list-group-item" id="element-menu">DECONNEXION</li>
+        </a>
+      </ul>
+    </div>
+  </div>
+</div>

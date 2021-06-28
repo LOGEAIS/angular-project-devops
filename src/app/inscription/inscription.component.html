@@ -1,0 +1,41 @@
+<div class="sidenav">
+    <div class="login-main-text">
+       <h1>Inscrivez vous pour commencer l'aventure !</h1>
+    </div>
+</div>
+
+<div class="main">
+   <div class="col-md-6 col-sm-12">
+      <div class="login-form">
+         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+               <label><h1>Email</h1></label>
+               <input formControlName="mail" type="text" class="form-control" placeholder="vn-efrei@efrei.net" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.mail.errors}">
+            </div>
+            <div *ngIf="submitted && registerForm.controls.mail.errors">
+               <div *ngIf="submitted && registerForm.controls.mail.errors.required" class="error"> Adresse e-mail obligatoire.</div>
+               <div *ngIf="submitted && registerForm.controls.mail.errors.email" class="error">Adresse e-mail invalide.</div>
+            </div>
+            
+            <div class="form-group">
+               <label><h2>Mot de passe</h2></label>
+               <input formControlName="password" type="password" class="form-control" placeholder="Mot de passe" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.password.errors}">
+            </div>
+            <div *ngIf="submitted && registerForm.controls.password.errors">
+               <div *ngIf="submitted && registerForm.controls.password.errors.required" class="error">Mot de passe obligatoire.</div>
+               <div *ngIf="submitted && registerForm.controls.password.errors.minlength" class="error">6 caractères minimum.</div>
+            </div>
+
+            <div class="form-group">
+               <label><h2>Confirmer mot de passe</h2></label>
+               <input formControlName="confirmPassword" type="password" class="form-control" placeholder="Confirmer votre mot de passe" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.confirmPassword.errors}">
+            </div>
+            <div *ngIf="submitted && registerForm.controls.confirmPassword.errors">
+               <div *ngIf="submitted && registerForm.controls.confirmPassword.errors.required" class="error">Vous devez confirmer votre mot de passe.</div>
+               <div *ngIf="submitted && registerForm.controls.confirmPassword.errors.mustMatch" class="error">Correspondance incorrect.</div>
+            </div>
+            <button type="submit" class="btn btn-black">Créer votre compte</button>&nbsp;
+         </form>
+      </div>
+   </div>
+ </div>
